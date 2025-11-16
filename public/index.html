@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkincareLab - Your Journey to Radiant Skin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-md fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-pink-600">Skincare<span class="text-gray-800">Lab</span></a>
+        <nav class="space-x-6 hidden md:block">
+          <a href="index.html" class="text-pink-500 font-semibold">Home</a>
+          <a href="skincare101.html" class="text-gray-600 hover:text-pink-500">Skincare 101</a>
+          <a href="shop.html" class="text-gray-600 hover:text-pink-500">Shop</a>
+          <a href="knowledge.html" class="text-gray-600 hover:text-pink-500">Knowledge Hub</a>
+          <a href="community.html" class="text-gray-600 hover:text-pink-500">Community</a>
+          <a href="contact.html" class="text-gray-600 hover:text-pink-500">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="relative pt-40 pb-24 text-center text-white bg-pink-500" style="background-image: url('https://images.unsplash.com/photo-1556228852-6d45a7d8a652?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative max-w-3xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Your Journey to Radiant Skin Starts Here</h1>
+            <p class="text-lg md:text-xl mb-8">Explore curated routines, trusted product reviews, and science-backed skincare advice tailored just for you.</p>
+            <a href="shop.html" class="bg-white text-pink-600 py-3 px-8 rounded-full font-bold hover:bg-pink-100 transition text-lg shadow-lg">Start Shopping</a>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-pink-600">Skincare, Simplified</h2>
+                <p class="text-gray-600 mt-2">We blend science and community to help you achieve your best skin.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl text-pink-500 mb-4">🔬</div>
+                    <h3 class="text-xl font-semibold mb-2">Science-Backed</h3>
+                    <p class="text-gray-600">Every product and piece of advice is vetted by our team for efficacy and safety.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl text-pink-500 mb-4">🌿</div>
+                    <h3 class="text-xl font-semibold mb-2">Personalized For You</h3>
+                    <p class="text-gray-600">Take our quiz to find the perfect routine for your unique skin type and concerns.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl text-pink-500 mb-4">💬</div>
+                    <h3 class="text-xl font-semibold mb-2">Community Driven</h3>
+                    <p class="text-gray-600">Join thousands of users sharing their journeys, tips, and honest reviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-pink-600 mb-10 text-center">Our Most-Loved Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="product-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-name="Super Hydrating Serum" data-price="29.99">
+                    <img src="https://via.placeholder.com/150/fde6e9/be185d?text=Serum" alt="Super Hydrating Serum" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h4 class="font-semibold text-lg text-pink-600">Super Hydrating Serum</h4>
+                    <span class="font-bold text-gray-800 text-lg">$29.99</span>
+                    <button class="add-to-cart mt-4 bg-pink-600 text-white py-2 w-full rounded-lg hover:bg-pink-700 transition font-semibold">Add to Cart</button>
+                </div>
+                <div class="product-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-name="Rejuvenating Night Cream" data-price="35.00">
+                    <img src="https://via.placeholder.com/150/fde6e9/be185d?text=Cream" alt="Rejuvenating Night Cream" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h4 class="font-semibold text-lg text-pink-600">Rejuvenating Night Cream</h4>
+                    <span class="font-bold text-gray-800 text-lg">$35.00</span>
+                    <button class="add-to-cart mt-4 bg-pink-600 text-white py-2 w-full rounded-lg hover:bg-pink-700 transition font-semibold">Add to Cart</button>
+                </div>
+                <div class="product-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-name="Gentle Cleanser" data-price="18.00">
+                    <img src="https://via.placeholder.com/150/fde6e9/be185d?text=Cleanser" alt="Gentle Cleanser" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h4 class="font-semibold text-lg text-pink-600">Gentle Cleanser</h4>
+                    <span class="font-bold text-gray-800 text-lg">$18.00</span>
+                    <button class="add-to-cart mt-4 bg-pink-600 text-white py-2 w-full rounded-lg hover:bg-pink-700 transition font-semibold">Add to Cart</button>
+                </div>
+                <div class="product-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-name="Vitamin C Serum" data-price="34.99">
+                    <img src="https://via.placeholder.com/150/fde6e9/be185d?text=Vitamin+C" alt="Vitamin C Serum" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h4 class="font-semibold text-lg text-pink-600">Vitamin C Serum</h4>
+                    <span class="font-bold text-gray-800 text-lg">$34.99</span>
+                    <button class="add-to-cart mt-4 bg-pink-600 text-white py-2 w-full rounded-lg hover:bg-pink-700 transition font-semibold">Add to Cart</button>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="shop.html" class="bg-white text-pink-600 py-3 px-8 rounded-full font-bold border border-pink-600 hover:bg-pink-600 hover:text-white transition">Explore All Products</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-pink-600 mb-10 text-center">From the Knowledge Hub</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="skincare101.html" class="block bg-white border rounded-xl shadow-md hover:shadow-lg transition p-6">
+                    <h4 class="font-semibold text-xl mb-3 text-pink-600">The 3-Step Skincare Routine</h4>
+                    <p class="text-gray-600 text-sm">Master the absolute basics of any effective routine: cleansing, moisturizing, and SPF.</p>
+                </a>
+                <a href="knowledge.html" class="block bg-white border rounded-xl shadow-md hover:shadow-lg transition p-6">
+                    <h4 class="font-semibold text-xl mb-3 text-pink-600">Find Your True Skin Type</h4>
+                    <p class="text-gray-600 text-sm">Is it dry, oily, sensitive, or combination? Learn how to perform a simple test at home.</p>
+                </a>
+                <a href="ingredient-glossary.html" class="block bg-white border rounded-xl shadow-md hover:shadow-lg transition p-6">
+                    <h4 class="font-semibold text-xl mb-3 text-pink-600">Decode Your Ingredients</h4>
+                    <p class="text-gray-600 text-sm">What is Niacinamide? Does Hyaluronic Acid really work? Explore our A-Z glossary.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-pink-100">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-pink-700">Loved by our Community</h2>
+            <blockquote class="text-gray-700 italic text-xl mb-4">"The personalized advice and product suggestions from SkincareLab are top-notch. My skin has never felt better. I saw real results in just a few weeks!"</blockquote>
+            <p class="font-semibold text-pink-800">— Rina A., Verified User</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white text-center">
+        <h3 class="text-2xl font-bold text-pink-600 mb-3">Join Our Skincare Circle</h3>
+        <p class="text-gray-600 mb-6 max-w-lg mx-auto">Get expert tips, new product alerts, and exclusive offers delivered to your inbox. No spam, ever.</p>
+        <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 px-4">
+            <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-md border-gray-300 border focus:outline-none focus:ring-2 focus:ring-pink-400" required />
+            <button type="submit" class="bg-pink-600 text-white px-8 py-3 rounded-md hover:bg-pink-700 transition font-bold">Subscribe</button>
+        </form>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0 text-center md:text-left">
+          <h4 class="text-lg font-bold mb-2">SkincareLab</h4>
+          <p class="text-sm text-gray-400">© 2025 All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-300 hover:underline">Privacy Policy</a>
+          <a href="#" class="text-gray-300 hover:underline">Terms of Service</a>
+          <a href="contact.html" class="text-gray-300 hover:underline">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

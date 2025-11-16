@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop All Products - SkincareLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .filter-btn.active {
+            background-color: #8A307F;
+            color: white;
+            font-weight: 600;
+        }
+        .product-grid-item {
+            display: block; /* Ensure items are visible by default */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-[#8A307F] flex items-center">
+            Skincare<span class="text-slate-800">Lab</span>
+        </a>
+        <nav class="space-x-6 hidden md:flex items-center">
+            <a href="index.html" class="text-slate-600 hover:text-[#8A307F]">Home</a>
+            <a href="skincare101.html" class="text-slate-600 hover:text-[#8A307F]">Skincare 101</a>
+            <a href="shop.html" class="text-[#8A307F] font-semibold">Shop</a>
+            <a href="knowledge.html" class="text-slate-600 hover:text-[#8A307F]">Knowledge Hub</a>
+            <a href="community.html" class="text-slate-600 hover:text-[#8A307F]">Community</a>
+            <a href="contact.html" class="text-slate-600 hover:text-[#8A307F]">Contact</a>
+            <a href="cart.html" class="relative text-slate-600 hover:text-[#8A307F] ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span id="cart-item-count" class="absolute -top-2 -right-3 bg-[#8A307F] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+            </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-20">
+        <section class="max-w-7xl mx-auto px-6 py-12">
+            <div class="bg-gradient-to-r from-purple-100 via-rose-100 to-fuchsia-100 p-12 rounded-lg text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#8A307F] mb-4">Discover Your Best Skin</h1>
+                <p class="text-lg text-slate-700 mb-6">Explore our curated collection of high-performance skincare, tailored for every skin type and concern.</p>
+                <a href="#product-grid-section" class="inline-block bg-[#8A307F] text-white py-3 px-8 rounded-full font-bold hover:bg-[#6b2562] transition-colors text-lg shadow-lg">Shop All Products</a>
+            </div>
+        </section>
+
+        <section id="product-grid-section" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900">The Collection</h2>
+                    <p class="text-slate-600 mt-3 text-lg">Use the filters to find the perfect product for you.</p>
+                </div>
+                <div class="lg:grid lg:grid-cols-4 lg:gap-12">
+                    <aside class="lg:col-span-1 mb-12 lg:mb-0">
+                        <div id="filter-controls" class="space-y-10 sticky top-28 bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-800 mb-4 border-b pb-2">Product Type</h3>
+                                <div class="space-y-2 mt-4">
+                                    <button class="filter-btn type-filter active w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="all">All Types</button>
+                                    <button class="filter-btn type-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="cleanser">Cleansers</button>
+                                    <button class="filter-btn type-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="serum">Serums</button>
+                                    <button class="filter-btn type-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="moisturizer">Moisturizers</button>
+                                    <button class="filter-btn type-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="sunscreen">Sunscreens</button>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-800 mb-4 border-b pb-2">Skin Concern</h3>
+                                <div class="space-y-2 mt-4">
+                                    <button class="filter-btn concern-filter active w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="all">All Concerns</button>
+                                    <button class="filter-btn concern-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="acne">Acne</button>
+                                    <button class="filter-btn concern-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="dryness">Dryness</button>
+                                    <button class="filter-btn concern-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="aging">Aging</button>
+                                    <button class="filter-btn concern-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="protection">Protection</button>
+                                    <button class="filter-btn concern-filter w-full text-left p-2 rounded-md hover:bg-rose-100 transition-colors" data-filter="redness">Redness</button>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div id="product-grid" class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+                      <div class="product-grid-item product-card" data-category="cleanser acne" data-name="CeraVe Acne Foaming Cream Cleanser" data-price="15.99" data-id="1">
+                        <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 bg-[#8A307F] text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Best Seller</div>
+                            <a href="product.html?id=1" class="block flex-grow flex flex-col">
+                                <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                    <img src="https://i5.walmartimages.com/seo/CeraVe-Acne-Foaming-Cream-Facial-Cleanser-Benzoyl-Peroxide-Hyaluronic-Acid-and-Niacinamide-5-fl-oz_3490e5a8-2329-4b04-a887-91a54727409c.d5f57348986c528c11e4003058b5b7c7.jpeg" alt="CeraVe Acne Foaming Cream Cleanser" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                                </div>
+                                <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">CeraVe Acne Foaming Cream Cleanser</h4>
+                            </a>
+                            <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.6 out of 5 stars">★★★★★</span><span class="text-slate-500">(1,258)</span></div>
+                            <span class="font-bold text-slate-900 text-xl mt-2">$15.99</span>
+                            <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-grid-item product-card" data-category="cleanser acne" data-name="La Roche-Posay Effaclar Medicated Cleanser" data-price="16.99" data-id="2">
+                       <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                            <a href="product.html?id=2" class="block flex-grow flex flex-col">
+                                <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                    <img src="https://www.laroche-posay.us/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-lrp-us-master-catalog/default/dw83569762/2023-Approved-Images/Full-Product/Effaclar-Medicated-Gel-Cleanser/LRP_E-COMM_Packshots_EFFACLAR_MEDICATED_GEL_CLEANSER_3606000570146_1000x1000_1.jpg?sw=1200&sh=1200&sm=fit&q=70" alt="La Roche-Posay Effaclar Medicated Cleanser" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                                </div>
+                                <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">La Roche-Posay Effaclar Medicated Cleanser</h4>
+                            </a>
+                            <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.7 out of 5 stars">★★★★★</span><span class="text-slate-500">(3,450)</span></div>
+                            <span class="font-bold text-slate-900 text-xl mt-2">$16.99</span>
+                            <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-grid-item product-card" data-category="cleanser aging" data-name="Youth to the People Superfood Cleanser" data-price="39.00" data-id="3">
+                        <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                           <div class="absolute top-0 left-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Clean Beauty</div>
+                           <a href="product.html?id=3" class="block flex-grow flex flex-col">
+                               <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                   <img src="https://www.sephora.com/productimages/product/p411387-av-01-Lhero.jpg" alt="Youth to the People Superfood Cleanser" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                               </div>
+                               <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Youth to the People Superfood Cleanser</h4>
+                           </a>
+                           <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.5 out of 5 stars">★★★★★</span><span class="text-slate-500">(8,754)</span></div>
+                           <span class="font-bold text-slate-900 text-xl mt-2">$39.00</span>
+                           <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                       </div>
+                   </div>
+
+                   <div class="product-grid-item product-card" data-category="cleanser dryness" data-name="Kiehl's Ultra Facial Cleanser" data-price="25.00" data-id="4">
+                        <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                           <a href="product.html?id=4" class="block flex-grow flex flex-col">
+                               <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                   <img src="https://www.kiehls.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-kiehls-master-catalog/default/dwb535805c/2022-Approved-Images/Full-Product/Ultra-Facial-Cleanser/kiehls-facial-cleansers-ultra-facial-cleanser-3605975037494-150ml.jpg?sw=1200&sh=1200&sm=fit&q=70" alt="Kiehl's Ultra Facial Cleanser" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                               </div>
+                               <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Kiehl's Ultra Facial Cleanser</h4>
+                           </a>
+                           <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.7 out of 5 stars">★★★★★</span><span class="text-slate-500">(4,102)</span></div>
+                           <span class="font-bold text-slate-900 text-xl mt-2">$25.00</span>
+                           <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                       </div>
+                   </div>
+
+                   <div class="product-grid-item product-card" data-category="cleanser dryness redness" data-name="Vanicream Gentle Facial Cleanser" data-price="9.49" data-id="5">
+                       <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                           <div class="absolute top-0 left-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Derm-Recommended</div>
+                           <a href="product.html?id=5" class="block flex-grow flex flex-col">
+                               <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                   <img src="https://i5.walmartimages.com/seo/Vanicream-Gentle-Facial-Cleanser-for-Sensitive-Skin-8-fl-oz_4a11f99c-d40b-4654-86a0-8f9f21f1e98d.e5647614f494f1c1f44d8b9d3b14f49f.jpeg" alt="Vanicream Gentle Facial Cleanser" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                               </div>
+                               <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Vanicream Gentle Facial Cleanser</h4>
+                           </a>
+                           <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.8 out of 5 stars">★★★★★</span><span class="text-slate-500">(1,987)</span></div>
+                           <span class="font-bold text-slate-900 text-xl mt-2">$9.49</span>
+                           <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                       </div>
+                   </div>
+                   
+                   <div class="product-grid-item product-card" data-category="serum aging" data-name="RoC Retinol Correxion Deep Wrinkle Serum" data-price="24.97" data-id="6">
+                        <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                           <div class="absolute top-0 left-0 bg-[#8A307F] text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Best Seller</div>
+                           <a href="product.html?id=6" class="block flex-grow flex flex-col">
+                               <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                   <img src="https://www.rocskincare.com/cdn/shop/products/retinol-correxion-deep-wrinkle-serum-1.jpg?v=1662058499&width=1200" alt="RoC Retinol Correxion Deep Wrinkle Serum" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                               </div>
+                               <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">RoC Retinol Correxion Deep Wrinkle Serum</h4>
+                           </a>
+                           <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.5 out of 5 stars">★★★★★</span><span class="text-slate-500">(18,992)</span></div>
+                           <span class="font-bold text-slate-900 text-xl mt-2">$24.97</span>
+                           <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                       </div>
+                   </div>
+
+                   <div class="product-grid-item product-card" data-category="serum aging" data-name="The Ordinary Granactive Retinoid 2% Emulsion" data-price="12.20" data-id="7">
+                        <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                           <a href="product.html?id=7" class="block flex-grow flex flex-col">
+                               <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                   <img src="https://images.sephora.com/is/image/SEPHORA/1911617?wid=1000" alt="The Ordinary Granactive Retinoid 2% Emulsion" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                               </div>
+                               <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">The Ordinary Granactive Retinoid 2% Emulsion</h4>
+                           </a>
+                           <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.3 out of 5 stars">★★★★☆</span><span class="text-slate-500">(980)</span></div>
+                           <span class="font-bold text-slate-900 text-xl mt-2">$12.20</span>
+                           <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                       </div>
+                   </div>
+
+                   <div class="product-grid-item product-card" data-category="serum dryness" data-name="The Ordinary Hyaluronic Acid 2% + B5" data-price="9.90" data-id="8">
+                       <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                          <a href="product.html?id=8" class="block flex-grow flex flex-col">
+                              <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                  <img src="https://images.sephora.com/is/image/SEPHORA/2031376?wid=1000" alt="The Ordinary Hyaluronic Acid 2% + B5" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                              </div>
+                              <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">The Ordinary Hyaluronic Acid 2% + B5</h4>
+                          </a>
+                          <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.4 out of 5 stars">★★★★☆</span><span class="text-slate-500">(7,890)</span></div>
+                          <span class="font-bold text-slate-900 text-xl mt-2">$9.90</span>
+                          <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                      </div>
+                  </div>
+
+                  <div class="product-grid-item product-card" data-category="serum aging protection" data-name="CeraVe Skin Renewing Vitamin C Serum" data-price="22.99" data-id="9">
+                      <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Top Rated</div>
+                         <a href="product.html?id=9" class="block flex-grow flex flex-col">
+                             <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                 <img src="https://i5.walmartimages.com/seo/CeraVe-Skin-Renewing-Vitamin-C-Serum-with-10-Pure-Vitamin-C-1-fl-oz_492211f4-3074-4b47-b8ab-1025707b46a7.41164106e232810f601b3438a3901b0b.jpeg" alt="CeraVe Skin Renewing Vitamin C Serum" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                             </div>
+                             <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">CeraVe Skin Renewing Vitamin C Serum</h4>
+                         </a>
+                         <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.5 out of 5 stars">★★★★★</span><span class="text-slate-500">(15,320)</span></div>
+                         <span class="font-bold text-slate-900 text-xl mt-2">$22.99</span>
+                         <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                     </div>
+                 </div>
+
+                 <div class="product-grid-item product-card" data-category="serum dryness pigmentation" data-name="Glow Recipe Watermelon Glow Niacinamide Dew Drops" data-price="35.00" data-id="10">
+                      <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 bg-pink-400 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Viral Favorite</div>
+                         <a href="product.html?id=10" class="block flex-grow flex flex-col">
+                             <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                                 <img src="https://www.sephora.com/productimages/product/p466122-av-01-Lhero.jpg" alt="Glow Recipe Watermelon Glow Niacinamide Dew Drops" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                             </div>
+                             <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Glow Recipe Watermelon Glow Niacinamide Dew Drops</h4>
+                         </a>
+                         <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.6 out of 5 stars">★★★★★</span><span class="text-slate-500">(4,521)</span></div>
+                         <span class="font-bold text-slate-900 text-xl mt-2">$35.00</span>
+                         <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                     </div>
+                 </div>
+                 <div class="product-grid-item product-card" data-category="serum acne redness" data-name="The INKEY List Niacinamide Oil Control Serum" data-price="8.99" data-id="11">
+                  <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                     <a href="product.html?id=11" class="block flex-grow flex flex-col">
+                         <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                             <img src="https://us.theinkeylist.com/cdn/shop/products/niacinamide-1_1024x1024.jpg?v=1658422118" alt="The INKEY List Niacinamide Oil Control Serum" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                         </div>
+                         <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">The INKEY List Niacinamide Oil Control Serum</h4>
+                     </a>
+                     <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.4 out of 5 stars">★★★★☆</span><span class="text-slate-500">(1,234)</span></div>
+                     <span class="font-bold text-slate-900 text-xl mt-2">$8.99</span>
+                     <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                 </div>
+             </div>
+
+             <div class="product-grid-item product-card" data-category="moisturizer dryness" data-name="Kiehl's Ultra Facial Cream" data-price="38.00" data-id="12">
+                  <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                   <div class="absolute top-0 left-0 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Cult Favorite</div>
+                     <a href="product.html?id=12" class="block flex-grow flex flex-col">
+                         <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                             <img src="https://www.kiehls.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-kiehls-master-catalog/default/dw769ca132/2022-Approved-Images/Full-Product/Ultra-Facial-Cream/kiehls-facial-creams-ultra-facial-cream-002-3605970360757-1-7oz.jpg?sw=1200&sh=1200&sm=fit&q=70" alt="Kiehl's Ultra Facial Cream" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                         </div>
+                         <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Kiehl's Ultra Facial Cream</h4>
+                     </a>
+                     <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.8 out of 5 stars">★★★★★</span><span class="text-slate-500">(5,230)</span></div>
+                     <span class="font-bold text-slate-900 text-xl mt-2">$38.00</span>
+                     <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                 </div>
+             </div>
+
+             <div class="product-grid-item product-card" data-category="moisturizer dryness" data-name="CeraVe Moisturizing Cream" data-price="17.78" data-id="13">
+                 <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 bg-[#8A307F] text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Best Seller</div>
+                    <a href="product.html?id=13" class="block flex-grow flex flex-col">
+                        <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                            <img src="https://i5.walmartimages.com/seo/CeraVe-Moisturizing-Cream-Daily-Face-and-Body-Moisturizer-for-Dry-Skin-19-oz_6a3068e1-3316-412e-a2f0-94a3a60a3795.342e5d77e48b5c160b721e7d8961914c.jpeg" alt="CeraVe Moisturizing Cream" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">CeraVe Moisturizing Cream</h4>
+                    </a>
+                    <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.8 out of 5 stars">★★★★★</span><span class="text-slate-500">(89,102)</span></div>
+                    <span class="font-bold text-slate-900 text-xl mt-2">$17.78</span>
+                    <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-grid-item product-card" data-category="moisturizer acne dryness" data-name="Neutrogena Hydro Boost Water Gel" data-price="21.49" data-id="14">
+                 <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                    <a href="product.html?id=14" class="block flex-grow flex flex-col">
+                        <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                            <img src="https://i5.walmartimages.com/seo/Neutrogena-Hydro-Boost-Hyaluronic-Acid-Water-Gel-Face-Moisturizer-1-7-oz_09395f2a-7965-442a-974e-ac50f8646b52.50285a867c295b9c3f76859349884a44.jpeg" alt="Neutrogena Hydro Boost Water Gel" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Neutrogena Hydro Boost Water Gel</h4>
+                    </a>
+                    <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.6 out of 5 stars">★★★★★</span><span class="text-slate-500">(75,230)</span></div>
+                    <span class="font-bold text-slate-900 text-xl mt-2">$21.49</span>
+                    <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-grid-item product-card" data-category="moisturizer dryness redness" data-name="La Roche-Posay Toleriane Double Repair Moisturizer" data-price="22.99" data-id="15">
+                 <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                    <a href="product.html?id=15" class="block flex-grow flex flex-col">
+                        <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                            <img src="https://www.laroche-posay.us/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-lrp-us-master-catalog/default/dw388316e6/2023-Approved-Images/Full-Product/Toleriane/Double-Repair-Face-Moisturizer/LRP_E-COMM_Packshots_TOLERIANE_DOUBLE_REPAIR_MOISTURIZER_3337875545792_1000x1000_1.jpg?sw=1200&sh=1200&sm=fit&q=70" alt="La Roche-Posay Toleriane Double Repair Moisturizer" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">La Roche-Posay Toleriane Double Repair Moisturizer</h4>
+                    </a>
+                    <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.7 out of 5 stars">★★★★★</span><span class="text-slate-500">(15,678)</span></div>
+                    <span class="font-bold text-slate-900 text-xl mt-2">$22.99</span>
+                    <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-grid-item product-card" data-category="moisturizer dryness aging" data-name="Drunk Elephant Lala Retro Whipped Cream" data-price="62.00" data-id="16">
+                 <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                    <a href="product.html?id=16" class="block flex-grow flex flex-col">
+                        <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                            <img src="https://www.drunkelephant.com/cdn/shop/products/lala-retro-whipped-cream-1_1200x.jpg?v=1669677274" alt="Drunk Elephant Lala Retro Whipped Cream" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Drunk Elephant Lala Retro Whipped Cream</h4>
+                    </a>
+                    <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.5 out of 5 stars">★★★★★</span><span class="text-slate-500">(3,120)</span></div>
+                    <span class="font-bold text-slate-900 text-xl mt-2">$62.00</span>
+                    <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-grid-item product-card" data-category="sunscreen protection" data-name="Supergoop! Unseen Sunscreen SPF 40" data-price="38.00" data-id="17">
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                   <div class="absolute top-0 left-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Top Rated</div>
+                   <a href="product.html?id=17" class="block flex-grow flex flex-col">
+                       <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                           <img src="https://images.sephora.com/is/image/SEPHORA/2031509?wid=1000" alt="Supergoop! Unseen Sunscreen SPF 40" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                       </div>
+                       <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Supergoop! Unseen Sunscreen SPF 40</h4>
+                   </a>
+                   <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.5 out of 5 stars">★★★★★</span><span class="text-slate-500">(4,500)</span></div>
+                   <span class="font-bold text-slate-900 text-xl mt-2">$38.00</span>
+                   <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+               </div>
+           </div>
+
+           <div class="product-grid-item product-card" data-category="sunscreen protection acne redness" data-name="EltaMD UV Clear Broad-Spectrum SPF 46" data-price="41.00" data-id="18">
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                   <div class="absolute top-0 left-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Derm-Recommended</div>
+                   <a href="product.html?id=18" class="block flex-grow flex flex-col">
+                       <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                           <img src="https://i5.walmartimages.com/seo/EltaMD-UV-Clear-Tinted-Face-Sunscreen-SPF-46-Sun-Protection-for-Oily-Skin-1-7-oz_b5e5c777-a164-4b55-a0a6-19412f9e42e5.04e262111c1e08929e7424d622f3e82b.jpeg" alt="EltaMD UV Clear Broad-Spectrum SPF 46" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                       </div>
+                       <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">EltaMD UV Clear Broad-Spectrum SPF 46</h4>
+                   </a>
+                   <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.7 out of 5 stars">★★★★★</span><span class="text-slate-500">(21,500)</span></div>
+                   <span class="font-bold text-slate-900 text-xl mt-2">$41.00</span>
+                   <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+               </div>
+           </div>
+
+           <div class="product-grid-item product-card" data-category="sunscreen protection" data-name="La Roche-Posay Anthelios Melt-in Milk SPF 60" data-price="27.99" data-id="19">
+               <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                  <a href="product.html?id=19" class="block flex-grow flex flex-col">
+                      <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                          <img src="https://www.laroche-posay.us/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-lrp-us-master-catalog/default/dw8a67d02e/2023-Approved-Images/Full-Product/Anthelios-Melt-in-Milk-Sunscreen-SPF-60/LRP_E-COMM_Packshots_ANTHELIOS_MELT_IN_MILK_SPF_60_3606000546129_1000x1000_1.jpg?sw=1200&sh=1200&sm=fit&q=70" alt="La Roche-Posay Anthelios Melt-in Milk SPF 60" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                      <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">La Roche-Posay Anthelios Melt-in Milk SPF 60</h4>
+                  </a>
+                  <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.7 out of 5 stars">★★★★★</span><span class="text-slate-500">(11,340)</span></div>
+                  <span class="font-bold text-slate-900 text-xl mt-2">$27.99</span>
+                  <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+              </div>
+          </div>
+
+          <div class="product-grid-item product-card" data-category="sunscreen protection" data-name="Biore UV Aqua Rich Watery Essence SPF50+" data-price="14.50" data-id="20">
+               <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                   <div class="absolute top-0 left-0 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Cult Favorite</div>
+                  <a href="product.html?id=20" class="block flex-grow flex flex-col">
+                      <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                          <img src="https://m.media-amazon.com/images/I/51BS8g1eTmL.jpg" alt="Biore UV Aqua Rich Watery Essence SPF50+" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                      <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Biore UV Aqua Rich Watery Essence SPF50+</h4>
+                  </a>
+                  <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.8 out of 5 stars">★★★★★</span><span class="text-slate-500">(35,000)</span></div>
+                  <span class="font-bold text-slate-900 text-xl mt-2">$14.50</span>
+                  <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+              </div>
+          </div>
+
+          <div class="product-grid-item product-card" data-category="sunscreen protection" data-name="Black Girl Sunscreen Broad Spectrum SPF 30" data-price="15.99" data-id="21">
+               <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                  <a href="product.html?id=21" class="block flex-grow flex flex-col">
+                      <div class="overflow-hidden rounded-md mb-5 relative flex-shrink-0">
+                          <img src="https://i5.walmartimages.com/seo/Black-Girl-Sunscreen-Broad-Spectrum-SPF-30-3-fl-oz_b01639d6-11f8-450b-8d82-895180f68481.045f2849b2575f0f3535948f95c02421.jpeg" alt="Black Girl Sunscreen Broad Spectrum SPF 30" class="w-full h-52 object-contain group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                      <h4 class="font-semibold text-base text-slate-800 flex-grow hover:text-[#8A307F]">Black Girl Sunscreen Broad Spectrum SPF 30</h4>
+                  </a>
+                  <div class="flex items-center gap-2 mt-2 text-sm text-amber-500"><span title="Rating: 4.7 out of 5 stars">★★★★★</span><span class="text-slate-500">(8,900)</span></div>
+                  <span class="font-bold text-slate-900 text-xl mt-2">$15.99</span>
+                  <button class="add-to-cart mt-4 bg-rose-100 text-[#8A307F] w-full py-2.5 rounded-lg hover:bg-[#8A307F] hover:text-white transition-colors font-semibold">Add to Cart</button>
+              </div>
+          </div>
+
+
+           </div>
+       </div>
+   </div>
+</section>
+</main>
+
+<footer class="bg-slate-900 text-white py-10">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+   <div class="mb-6 md:mb-0">
+       <h4 class="text-lg font-bold mb-2">SkincareLab</h4>
+       <p class="text-sm text-slate-400">© 2025 All rights reserved.</p>
+   </div>
+   <div class="flex space-x-6 text-sm">
+       <a href="#" class="text-slate-300 hover:underline">Privacy Policy</a>
+       <a href="#" class="text-slate-300 hover:underline">Terms of Service</a>
+       <a href="contact.html" class="text-slate-300 hover:underline">Contact Us</a>
+   </div>
+</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

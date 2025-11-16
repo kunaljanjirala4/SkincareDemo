@@ -1,0 +1,17 @@
+/* /css/styles.css */
+
+/* Import Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add MINIMAL global styles here if needed, but let Tailwind do most of the work. */
+body {
+  /* The font-family is already set in your HTML body tag with Tailwind's `font-sans` class */
+  /* Keep custom properties or very specific overrides here */
+}
+
+/* Add a smooth transition to interactive elements for a polished feel */
+a, button {
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - SkincareLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-[#8A307F]">Skincare<span class="text-slate-800">Lab</span></a>
+        <nav class="space-x-6 hidden md:block">
+            <a href="index.html" class="text-slate-600 hover:text-[#8A307F]">Home</a>
+            <a href="skincare101.html" class="text-slate-600 hover:text-[#8A307F]">Skincare 101</a>
+            <a href="shop.html" class="text-slate-600 hover:text-[#8A307F]">Shop</a>
+            <a href="knowledge.html" class="text-slate-600 hover:text-[#8A307F]">Knowledge Hub</a>
+            <a href="community.html" class="text-slate-600 hover:text-[#8A307F]">Community</a>
+            <a href="contact.html" class="text-[#8A307F] font-semibold">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>  
+        <section class="bg-rose-50 pt-40 pb-20 text-center">
+            <div class="max-w-3xl mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Get in Touch</h1>
+                <p class="text-lg text-slate-600">We'd love to hear from you! Whether you have a question about our products, a suggestion, or just want to say hello, our team is ready to answer all your questions.</p>
+            </div>
+        </section>
+
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 bg-white p-8 md:p-12 rounded-lg shadow-md">
+                    <div class="mb-12 lg:mb-0">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h2>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-slate-700 mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300" placeholder="Enter your name" required />
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300" placeholder="Enter your email" required />
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="6" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#8A307F] text-white py-3 px-6 rounded-lg hover:bg-[#B3354D] transition font-bold text-lg">Send Message</button>
+                        </form>
+                        
+                        <div id="form-success-message" class="hidden text-center p-8 bg-rose-100 rounded-lg">
+                            <h3 class="text-2xl font-bold text-[#8A307F]">Thank You!</h3>
+                            <p class="text-slate-600 mt-2">Your message has been sent successfully. We will get back to you shortly.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 mb-6">Contact Information</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-rose-100 p-3 rounded-full"><svg class="w-6 h-6 text-[#8A307F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                                <div><h4 class="font-semibold text-slate-700">Email Us</h4><a href="mailto:support@skincarelab.com" class="text-slate-500 hover:text-[#8A307F]">support@skincarelab.com</a></div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-rose-100 p-3 rounded-full"><svg class="w-6 h-6 text-[#8A307F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                                <div><h4 class="font-semibold text-slate-700">Call Us</h4><p class="text-slate-500">(123) 456-7890</p></div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-rose-100 p-3 rounded-full"><svg class="w-6 h-6 text-[#8A307F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                                <div><h4 class="font-semibold text-slate-700">Find Us</h4><p class="text-slate-500">123 Beauty St.<br>Suite 101<br>East Lansing, MI, 48823</p></div>
+                            </div>
+                        </div>
+                        <div class="mt-8 rounded-lg overflow-hidden shadow-md">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46835.89885078511!2d-84.52044321034426!3d42.73392476566631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8822c1d369824667%3A0x48422557477f3944!2sEast%20Lansing%2C%20MI!5e0!3m2!1sen!2sus!4v1717056455110!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-slate-900 text-white py-10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+          <h4 class="text-lg font-bold mb-2">SkincareLab</h4>
+          <p class="text-sm text-slate-400">© 2025 All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-slate-300 hover:underline">Privacy Policy</a>
+          <a href="#" class="text-slate-300 hover:underline">Terms of Service</a>
+          <a href="contact.html" class="text-slate-300 hover:underline">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

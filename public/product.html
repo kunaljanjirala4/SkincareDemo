@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - SkincareLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-[#8A307F] flex items-center">
+            Skincare<span class="text-slate-800">Lab</span>
+        </a>
+        <nav class="space-x-6 hidden md:flex items-center">
+            <a href="index.html" class="text-slate-600 hover:text-[#8A307F]">Home</a>
+            <a href="skincare101.html" class="text-slate-600 hover:text-[#8A307F]">Skincare 101</a>
+            <a href="shop.html" class="text-[#8A307F] font-semibold">Shop</a>
+            <a href="knowledge.html" class="text-slate-600 hover:text-[#8A307F]">Knowledge Hub</a>
+            <a href="community.html" class="text-slate-600 hover:text-[#8A307F]">Community</a>
+            <a href="contact.html" class="text-slate-600 hover:text-[#8A307F]">Contact</a>
+            <a href="cart.html" class="relative text-slate-600 hover:text-[#8A307F] ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span id="cart-item-count" class="absolute -top-2 -right-3 bg-[#8A307F] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+            </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-24 pb-20">
+        <div id="product-detail-container" class="max-w-7xl mx-auto px-6">
+            
+            <div id="product-loading" class="text-center py-20">
+                <svg class="animate-spin h-8 w-8 text-[#8A307F] mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="mt-4 text-slate-500">Loading product details...</p>
+            </div>
+            
+            </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+          <h4 class="text-lg font-bold mb-2">SkincareLab</h4>
+          <p class="text-sm text-slate-400">© 2025 All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-slate-300 hover:underline">Privacy Policy</a>
+          <a href="#" class="text-slate-300 hover:underline">Terms of Service</a>
+          <a href="contact.html" class="text-slate-300 hover:underline">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
